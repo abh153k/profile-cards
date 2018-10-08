@@ -1,0 +1,129 @@
+/*
+ * Google Fonts
+ */
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Montserrat|Open+Sans');
+
+/*
+ * Minimal CSS reset
+ */
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/*
+ * Page styles
+ */
+body {
+    background-color: #254C79;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+#outer {
+    display: table;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    margin-top: 33px;
+}
+  
+#middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+  
+#stack {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 282px;
+    position: relative;
+}
+
+#stack .card {
+    background: #ffffff;
+    position: absolute;
+    top:0;
+    left: 0;
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    min-height:50vh;
+}
+
+.card h2 {
+    font-family: 'Abril Fatface', cursive;
+    text-align: center;
+    padding:8px 0;
+}
+
+#info h2 small {
+    display:block;
+    color:#a1a1a1;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+}
+
+#bio {
+    text-align: justify;
+    line-height: 1.3rem;
+    padding:13px;
+}
+
+#connect-links a {
+    display:flex;
+    text-decoration: none;
+    color: #a1a1a1;
+}
+
+#connect-links a h4 {
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+}
+
+#connect-links h4 small {
+    display:block;
+    font-family: "Open Sans", sans-serif;
+    text-transform: capitalize;
+}
+
+svg.icon {
+    height:32px;
+    width:32px;
+    fill:#a1a1a1;
+}
+
+.buttons {
+    text-align: center;
+    margin-bottom: 8px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.button {
+    text-decoration: none;
+    border:1px solid #a1a1a1;
+    padding:4px 6px;
+    display:inline-block;
+    color: #a1a1a1;
+    text-transform: uppercase;
+}
