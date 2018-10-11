@@ -8,6 +8,15 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <div id="cover">
+            <div class="flex">
+                <div class="loader">
+                </div>
+            </div>
+            <div class="load-text">
+                Loading...
+            </div> 
+    </div>
     <!-- icons -->
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <symbol id="bucket-icon" viewBox="0 0 91.302 91.302">
@@ -64,16 +73,16 @@
                     </div>
                     <div id="info">
                         <h2>
-                        Abhisek Dutta
-                        <small>Developer &bull; Techno-sexual</small>
+                        <span class="obfus">Abhisek Dutta</span>
+                        <small class="obfus">Developer &bull; Techno-sexual</small>
                         </h2>
                         <div id="bio">
                             A very complicated simple person. Jack of all trades, master of a few. Loves to read books and well-written code. Fluently speaks several languages including JavaScript, PHP, Java, English, Bengali etc. Listens to loads of music everyday. PhD in mood-swing. Chess Grandmaster of disaster. 
                         </div>
                     </div>
                     <div class="buttons">
-                        <a href="javascript:;" class="button">Connect</a>
-                        <a href="javascript:;" class="button">Contact</a>
+                        <a href="javascript:;" class="button hvr-radial-in">Connect</a>
+                        <a href="javascript:;" class="button hvr-radial-in">Contact</a>
                     </div>
                 </div>
 
@@ -131,7 +140,10 @@
         </div>
     </div>
 
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="./functions.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+    <script src="./js/baffle.min.js"></script>
+    <script src="./js/functions.js"></script>
 </body>
 </html>
