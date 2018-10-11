@@ -60,17 +60,34 @@ body {
     position: relative;
 }
 
-#stack .card {
+.card {
     background: #ffffff;
     position: absolute;
     top:0;
     left: 0;
     width: 100%;
-    border-radius: 5px;
+    /*border-radius: 5px;*/
+    z-index: 1;
+    -webkit-box-shadow: -1px -1px 5px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: -1px -1px 5px 0px rgba(0,0,0,0.5);
+    box-shadow: -1px -1px 5px 0px rgba(0,0,0,0.5);
+}
+
+.card:nth-child(2) {
+    top:-10px;
+    left: -10px;
+    z-index:-1;
+    /*width:calc(100% - 12px);*/
+}
+
+.card:nth-child(3) {
+    top:-18;
+    left:-12px;
+    z-index: -2;
 }
 
 .card #avatar img {
-    border-radius:5px 5px 0 0;
+    /*border-radius:5px 5px 0 0;*/
 }
 
 .card h2 {
