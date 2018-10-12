@@ -10,10 +10,35 @@ imagesLoaded(document, function() { //noconflict wrapper
     maxHeight = Math.max.apply(null, heights);
     $(".card").height(maxHeight);
 
+    var tl = anime.timeline();
+
+    tl.add({
+        targets: ".card",
+        opacity: [0,1],
+        translateY:["-8px",0],
+        delay: function(el,i) {
+            return i*250;
+        }
+    })
     // Baffle
     baffle(".obfus", {
-        characters: "10101",
+        characters: "!@#$%&*()-_+=~?><:;',./",
         speed: 45
-    }).reveal(1500);
+    }).reveal(350);
+
+    tl.add({
+        targets: "#bio",
+        opacity: [0,1],
+        translateY: ["-4px",0]
+    });
+
+    tl.add({
+        targets: ".button",
+        translateY: ["3px",0],
+        scale:[0,1],
+        delay: function(el,i) {
+            return i*150;
+        }
+    })
 
 });
