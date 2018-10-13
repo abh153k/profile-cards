@@ -10,33 +10,48 @@ imagesLoaded(document, function() { //noconflict wrapper
     maxHeight = Math.max.apply(null, heights);
     $(".card").height(maxHeight);
 
+    /* Connect Button animation */
+    $(".connect-button").on("click", function(){
+        var $this = $(this);
+        var connect_card = $("#connect-card");
+        connect_card.prepend();
+        anime({
+            targets: ".card:first-child",
+            rotate: [0,"-15deg",0],
+            translateX: [0,282,0],
+            easing: 'linear',
+            duration:350,
+            elasticity:500,
+            complete: function(){
+                $(".card:first-child").css({"top":"-20px", "left": "-20px"}).appendTo("#stack");
+            }
+        })
+    })
+
     // Info card animation
     var info_tl = anime.timeline();
     info_tl.add({
         targets: ".card",
         opacity: [0,1],
-        translateY:["-8px",0],
+        translateY:["-80px",0],
         delay: function(el,i) {
             return i*150;
         }
     }).add({
         targets: "#info h2",
         opacity: [0,1],
-        delay: "-=10"
+        translateX: ["24px",0],
     }).add({
         targets: "#bio",
         opacity: [0,1],
-        translateY: ["-4px",0],
-        complete: function(){
-            new TypeIt("#bio");
-        }
+        translateY: ["-24px",0],
     }).add({
         targets: ".button",
-        translateY: ["3px",0],
+        translateY: ["23px",0],
         opacity:[0,1],
-        delay: function(el,i) {
-            return i*150;
+        delay: function(el, i) {
+            return Math.sin(i*Math.PI/2);
         }
-    })
+    });
 
 });
