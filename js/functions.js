@@ -10,22 +10,30 @@ imagesLoaded(document, function() { //noconflict wrapper
     maxHeight = Math.max.apply(null, heights);
     $(".card").height(maxHeight);
 
-    /* Connect Button animation */
-    $(".connect-button").on("click", function(){
-        var $this = $(this);
-        var connect_card = $("#connect-card");
-        connect_card.prepend();
-        anime({
-            targets: ".card:first-child",
-            rotate: [0,"-15deg",0],
-            translateX: [0,282,0],
-            easing: 'linear',
-            duration:350,
-            elasticity:500,
-            complete: function(){
-                $(".card:first-child").css({"top":"-20px", "left": "-20px"}).appendTo("#stack");
-            }
-        })
+    /* Navigate stack by clicking on buttons */
+    $(".button").each(function(index){
+        var $this = this;
+        $(this).on('click', function(e){
+            var target_card = $(this).data("target-card");
+            console.log("Target is", target_card);
+            // send top to back
+            anime({
+                targets: ".card:first-child",
+                rotate: [0,"-15deg",0],
+                translateX: [0,282,0],
+                easing: 'linear',
+                duration:350,
+                elasticity:500,
+                /*complete: function(){
+                    $(".card:first-child").css({"top":"-20px", "left": "-20px"}).appendTo("#stack");
+                }*/
+            })
+            console.log("Appending to stack...");
+            $("#stack:first-child").appendTo("#stack");
+            // Bring target card to front
+            console.log("Prepending", target_card, " to stack...")
+            $(target_card).prependTo("#stack");
+        });
     })
 
     // Info card animation
