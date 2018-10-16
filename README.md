@@ -1,5 +1,7 @@
 # Card Stack Profile
-
+<p align="center">
+  <img src='./screenshot.png' />
+</p>
 A simple profile page with a card-stack effect.
 
 ## Inspiration
@@ -12,7 +14,6 @@ It's not ready for anything. I just wanted to learn Figma. However, I learned se
 
 * [VSCode](https://code.visualstudio.com/)
 * [FlatIcon](https://www.flaticon.com/) - For all the svg icons on the page
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
 ## LICENSE
 [CSS BY 2.5 IN](https://creativecommons.org/licenses/by/2.5/in/)
