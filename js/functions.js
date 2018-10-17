@@ -23,11 +23,11 @@ imagesLoaded(document, function() { //noconflict wrapper
                 duration:350,
                 complete: function(){
                     // send top to back
-                    console.log("Appending", $("#stack:first-child"), "to stack...");
-                    $(".card:first-child").appendTo("#stack");
-                    // Bring target card to front
-                    console.log("Prepending", target_card, " to stack...")
-                    $(target_card).prependTo("#stack");
+                    if($(target_card).is(".card:last-child")){ // if the target is the last card
+                        $(".card:not(:last-child)").appendTo("#stack"); // then append all but last card at the end
+                    } else { // if not the last child
+                        $(".card:first-child").appendTo("#stack");
+                    }
                 }
             })
         });
@@ -68,7 +68,7 @@ imagesLoaded(document, function() { //noconflict wrapper
         var inputValue = $(this).val();
         if ( inputValue == "" ) {
             $(this).removeClass('filled');
-            $(this).parents('.form-group').removeClass('focused');  
+            $(this).parents('.form-group').removeClass('focused');
         } else {
             $(this).addClass('filled');
         }
