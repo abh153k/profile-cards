@@ -22,6 +22,7 @@ imagesLoaded(document, function() { //noconflict wrapper
             anime({
                 targets: anime_targets,
                 translateX: [0,282,0],
+                rotate: [0,"30deg",0],
                 easing: 'linear',
                 duration:450,
                 complete: function(){
