@@ -15,12 +15,15 @@ imagesLoaded(document, function() { //noconflict wrapper
         var $this = this;
         $(this).on('click', function(e){
             var target_card = $(this).data("target-card");
-            console.log("Target is", target_card);
+            // if the target is the last child,
+            // then animate all but the last card
+            // else only animate the first child
+            var anime_targets = ($(target_card).is(".card:last-child")) ? ".card:not(:last-child)" : ".card:first-child";
             anime({
-                targets: ".card:first-child",
+                targets: anime_targets,
                 translateX: [0,282,0],
                 easing: 'linear',
-                duration:350,
+                duration:450,
                 complete: function(){
                     // send top to back
                     if($(target_card).is(".card:last-child")){ // if the target is the last card
