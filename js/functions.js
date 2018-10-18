@@ -19,12 +19,13 @@ imagesLoaded(document, function() { //noconflict wrapper
             // then animate all but the last card
             // else only animate the first child
             var anime_targets = ($(target_card).is(".card:last-child")) ? ".card:not(:last-child)" : ".card:first-child";
-            anime({
+            var tl = new anime.timeline();
+            tl.add({
                 targets: anime_targets,
-                translateX: [0,282,0],
-                rotate: [0,"30deg",0],
+                translateX: [0,282],
+                rotate: [0,"30deg"],
                 easing: 'linear',
-                duration:450,
+                duration:150,
                 complete: function(){
                     // send top to back
                     if($(target_card).is(".card:last-child")){ // if the target is the last card
@@ -33,7 +34,13 @@ imagesLoaded(document, function() { //noconflict wrapper
                         $(".card:first-child").appendTo("#stack");
                     }
                 }
-            })
+            }).add({
+                targets: anime_targets,
+                translateX: [282,0],
+                rotate:["30deg",0],
+                easing: "linear",
+                duration: 150
+            });
         });
     })
 
