@@ -14,6 +14,7 @@ It's not ready for anything. I just wanted to learn Figma. However, I learned se
 
 * [VSCode](https://code.visualstudio.com/)
 * [FlatIcon](https://www.flaticon.com/) - For all the svg icons on the page
+* [Google Fonts](https://fonts.google.com/)
 
 ## LICENSE
 [CSS BY 2.5 IN](https://creativecommons.org/licenses/by/2.5/in/)
